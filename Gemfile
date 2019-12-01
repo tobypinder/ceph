@@ -1,8 +1,6 @@
 source "https://rubygems.org"
 
 gem "jets"
-
-
 gem "dynomite"
 
 # development and test groups are not bundled as part of the deployment
