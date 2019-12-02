@@ -1,4 +1,7 @@
 Jets.application.configure do
+  config.dynamoid = ActiveSupport::OrderedOptions.new
+  config.dynamoid.url = 'https://dynamodb.eu-west-2.amazonaws.com'
+  config.dynamoid.namespace = "ceph"
   # Example:
   # config.function.memory_size = 2048
 
