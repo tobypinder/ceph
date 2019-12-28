@@ -7,6 +7,5 @@ Dynamoid.configure do |config|
   config.secret_key    = ENV['SECRET_KEY']
 
   config.capacity_mode = :on_demand
+  config.logger = Logger.new(STDOUT)
 end
-
-Dynamoid.included_models.each { |m| m.create_table(sync: true) }

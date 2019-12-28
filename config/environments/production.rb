@@ -9,4 +9,7 @@ Jets.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # Docs: http://rubyonjets.com/docs/email-sending/
   # config.action_mailer.raise_delivery_errors = false
+
+  # IMPORTANT - This seems to need to be set
+  # config.logger = Logger.new(STDOUT)
 end

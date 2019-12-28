@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+AWS_PROFILE=tobypinder AWS_REGION=eu-west-2 jets delete production
