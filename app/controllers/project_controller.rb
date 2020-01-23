@@ -1,20 +1,16 @@
 class ProjectController < ApplicationController
   def index
     projects = Project.record_limit(30).all
+    payload  = { projects: projects }
 
-    # TODO: Extract the debug stuff as middleware
-    # TODO: Decorator pattern: #decorate_for_index / #decorate_for_show
-    json = { data: { projects: projects } }
-    json[:debug] = { event: event } if Jets.env.development?
-    render json: json
+    render json: Decorator::Base.new(event, payload).to_json
   end
 
   def show
     id      = params[:id]
     project = Project.where(id: id).first
+    payload = { project: project }
 
-    json = { data: { project: project } }
-    json[:debug] = { event: event } if Jets.env.development?
-    render json: json
+    render json: Decorator::Base.new(event, payload).to_json
   end
 end
